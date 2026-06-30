@@ -30,9 +30,8 @@
     .page-wrap { width: min(100%, 1180px); margin: 0 auto; padding: 0 20px; }
 
     /* ---------- TOP BAR ---------- */
-    .top-bar { position: relative; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 20px; width: min(100%, 1180px); margin: 0 auto; }
-    .top-bar img { width: 58px; height: auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25)); }
-    .top-bar .badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); backdrop-filter: blur(6px); color: #fff; font-weight: 600; padding: 9px 16px; border-radius: 999px; font-size: 0.88rem; }
+    .top-bar { position: relative; z-index: 5; display: flex; justify-content: flex-end; align-items: center; gap: 16px; padding: 22px 20px; width: min(100%, 1180px); margin: 0 auto; }
+    .top-bar .logo-wordmark { width: 210px; height: auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35)); }
 
     /* ---------- HERO ---------- */
     .hero {
@@ -166,7 +165,9 @@
     .schedule-line .item { font-size: 0.95rem; color: rgba(255,255,255,0.85); }
     .schedule-line .item strong { display: block; color: var(--gold); font-family: 'Frank Ruhl Libre', serif; font-size: 1.1rem; margin-bottom: 4px; }
 
-    footer { background: var(--navy-deep); color: rgba(255,255,255,0.55); text-align: center; padding: 26px 20px; font-size: 0.85rem; }
+    footer { background: var(--navy-deep); color: rgba(255,255,255,0.55); text-align: center; padding: 26px 20px; font-size: 0.85rem; display: grid; gap: 10px; justify-items: center; }
+    footer .footer-whatsapp { display: inline-flex; align-items: center; gap: 8px; color: #25d366; font-weight: 600; }
+    footer .footer-whatsapp:hover { opacity: 0.85; }
 
     @media (max-width: 920px) {
       .lead-grid { grid-template-columns: 1fr; }
@@ -179,12 +180,11 @@
 
   <header class="hero">
     <div class="top-bar">
-      <img src="./assets/logo.png" alt="לוגו MATAR TOURS" loading="lazy">
-      <span class="badge">ליווי אישי + הדגמות פרונטליות וזומים</span>
+      <img class="logo-wordmark" src="./assets/logo-wordmark.png" alt="MATAR TOURS" loading="lazy">
     </div>
     <div class="hero-content">
       <span class="hero-eyebrow">MATAR TOURS · עולם של חופש</span>
-      <h1>חיים של <em>יוקרה וחופש</em><br>בעולם התיירות - מהבית שלך</h1>
+      <h1>חיים של <em>יוקרה וחופש</em><br>בעולם התיירות - מהבית שלכם</h1>
       <p class="lead">תכנית הכשרה מלאה לאנשים בגיל 25-50 שאוהבים תיירות ורוצים הכנסה נוספת אמיתית. בלי צורך בניסיון קודם, עם ליווי אישי צמוד, קהילה תומכת ועסק שבונים יחד - שלב אחרי שלב.</p>
       <div class="hero-ctas">
         <a href="#leadForm" class="btn-primary">להשאיר פרטים ולתאם פגישה</a>
@@ -203,12 +203,12 @@
     <div class="page-wrap">
       <span class="eyebrow">למי זה מתאים</span>
       <h2>נשים וגברים שמחפשים יותר מסתם "עוד עבודה"</h2>
-      <p class="section-lead">אם את/ה בגיל 25-50, אוהב/ת תיירות, ומחפש/ת הכנסה נוספת אמיתית עם חופש זמן ואיכות חיים - זה בדיוק המקום שלך.</p>
+      <p class="section-lead">אם אתם בגילאי 25-50, אוהבים תיירות, ומחפשים הכנסה נוספת אמיתית עם חופש זמן ואיכות חיים - זה בדיוק המקום בשבילכם.</p>
       <div class="grid-4">
         <div class="stat-card">
           <div class="icon">✈</div>
           <strong>אין צורך בניסיון</strong>
-          <span>מלמדים אותך שלב אחרי שלב איך להצליח בעולם התיירות, גם אם זה תחום חדש לגמרי בשבילך.</span>
+          <span>מלמדים אתכם שלב אחרי שלב איך להצליח בעולם התיירות, גם אם זה תחום חדש לגמרי בשבילכם.</span>
         </div>
         <div class="stat-card">
           <div class="icon">🤍</div>
@@ -231,22 +231,22 @@
 
   <section class="banner">
     <div class="banner-inner">
-      <span class="eyebrow" style="color:var(--gold)">החיים שתמיד רצית</span>
-      <h2>חופש זה לא מילה גדולה - זה לוח זמנים שאת/ה קובע/ת</h2>
-      <p>בלי לשעבד את עצמך לשעון נוכחות. עם עסק שגדל בקצב שלך, קהילה שתומכת בך ועולם תיירות שמרגיש כמו תשוקה - לא כמו עבודה.</p>
+      <span class="eyebrow" style="color:var(--gold)">החיים שתמיד רציתם</span>
+      <h2>חופש זה לא מילה גדולה - זה לוח זמנים שאתם קובעים</h2>
+      <p>בלי לשעבד את עצמכם לשעון נוכחות. עם עסק שגדל בקצב שלכם, קהילה שתומכת בכם ועולם תיירות שמרגיש כמו תשוקה - לא כמו עבודה.</p>
     </div>
   </section>
 
   <section class="section section-navy">
     <div class="page-wrap">
-      <span class="eyebrow">מה תקבלי/תקבל בתכנית</span>
-      <h2>הכל כדי שתתחיל/י בביטחון מלא</h2>
-      <p class="section-lead">תכנית מובנית שמלווה אותך מהצעד הראשון ועד ללקוחות ולעסק פעיל.</p>
+      <span class="eyebrow">מה תקבלו בתכנית</span>
+      <h2>הכל כדי שתתחילו בביטחון מלא</h2>
+      <p class="section-lead">תכנית מובנית שמלווה אתכם מהצעד הראשון ועד ללקוחות ולעסק פעיל.</p>
       <div class="feature-row">
         <div class="feature">
           <div class="icon">🎓</div>
           <h3>הכשרה מלאה בתיירות</h3>
-          <p>לימוד כל מה שצריך כדי לבנות עסק תיירות מהבית, גם אם זה חדש לך לגמרי.</p>
+          <p>לימוד כל מה שצריך כדי לבנות עסק תיירות מהבית, גם אם זה חדש לכם לגמרי.</p>
         </div>
         <div class="feature">
           <div class="icon">💼</div>
@@ -256,12 +256,12 @@
         <div class="feature">
           <div class="icon">📊</div>
           <h3>שיווק ומכירות</h3>
-          <p>שיטות מכירה פשוטות ואפקטיביות שמתאימות לעבודה מהבית, בקצב שלך.</p>
+          <p>שיטות מכירה פשוטות ואפקטיביות שמתאימות לעבודה מהבית, בקצב שלכם.</p>
         </div>
         <div class="feature">
           <div class="icon">🤝</div>
           <h3>חברה ותמיכה אמיתית</h3>
-          <p>קהילה תומכת, מפגשים, זומים וקבוצת ליווי שלא תשאיר אותך לבד אף פעם.</p>
+          <p>קהילה תומכת, מפגשים, זומים וקבוצת ליווי שלא תשאיר אתכם לבד אף פעם.</p>
         </div>
       </div>
     </div>
@@ -277,8 +277,8 @@
         </div>
 
         <aside class="form-card">
-          <h2>השאיר/י פרטים כדי לתאם פגישה</h2>
-          <p>אם הדף מדבר אלייך, מלא/י פרטים עכשיו וקבע/י פגישה אישית במשרדים שלנו - מגדלי בסר, פתח תקווה.</p>
+          <h2>השאירו פרטים כדי לתאם פגישה</h2>
+          <p>אם הדף מדבר אליכם, מלאו פרטים עכשיו וקבעו פגישה אישית במשרדים שלנו - מגדלי בסר, פתח תקווה.</p>
           <form id="leadForm" autocomplete="on">
             <div id="formError" class="form-error" role="alert" style="display:none;"></div>
             <div class="form-group">
@@ -303,30 +303,30 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="interest">מה הכי מעניין אותך?</label>
+              <label for="interest">מה הכי מעניין אתכם?</label>
               <textarea id="interest" name="interest" rows="3" placeholder="למשל: עבודה מהבית, מכירות תיירות, הקמת עסק, ליווי אישי"></textarea>
             </div>
             <div class="form-group">
-              <label>באיזה תאריך נוח לך להגיע לפגישה במשרדים? *</label>
+              <label>באיזה תאריך נוח לכם להגיע לפגישה במשרדים? *</label>
               <div class="date-chips" id="dateChips"></div>
               <span class="date-hint">המפגשים מתקיימים כל יום שני ורביעי בשעה 19:30, ללא הגבלת מקומות.</span>
             </div>
             <div class="form-group">
               <label class="checkbox-label">
                 <input type="checkbox" id="commit" name="commit">
-                <span>אני מתחייב/ת להגיע בתאריך שבחרתי, ואם משהו ישתנה - אעדכן מראש בוואטסאפ.</span>
+                <span>מתחייבים להגיע בתאריך שנבחר, ואם משהו ישתנה - נעדכן מראש בוואטסאפ.</span>
               </label>
             </div>
-            <button type="submit" class="btn-primary">שלח/י פרטים ותאם/י פגישה</button>
-            <div class="form-note">🔒 הפרטים שלך נשמרים באופן מאובטח ולא יועברו לגורם שלישי.</div>
+            <button type="submit" class="btn-primary">שלחו פרטים ותאמו פגישה</button>
+            <div class="form-note">🔒 הפרטים שלכם נשמרים באופן מאובטח ולא יועברו לגורם שלישי.</div>
           </form>
 
           <div class="thank-you" id="thankYou">
-            <h2>תודה! נרשמת לפגישה</h2>
+            <h2>תודה! נרשמתם לפגישה</h2>
             <p id="thankYouDate" class="address"></p>
             <p>הפגישה תתקיים במשרדים שלנו - מגדלי בסר, פתח תקווה, בניין T, קומה 18.</p>
             <a href="#" id="addToCalendarBtn" class="btn-primary" target="_blank" rel="noreferrer">📅 הוסיפו לי תזכורת ביומן Google</a>
-            <a href="https://wa.me/972555564323" id="whatsappCancelLink" class="whatsapp" target="_blank" rel="noreferrer">צריך/ה לשנות או לבטל? עדכנו אותנו בוואטסאפ</a>
+            <a href="https://wa.me/972555564323" id="whatsappCancelLink" class="whatsapp" target="_blank" rel="noreferrer">צריכים לשנות או לבטל? עדכנו אותנו בוואטסאפ</a>
           </div>
         </aside>
       </div>
@@ -337,8 +337,8 @@
     <div class="page-wrap">
       <span class="eyebrow">איך זה ממשיך</span>
       <h2>פגישה אישית, בלי התחייבות</h2>
-      <p>לאחר שליחת הטופס תקבלו אישור כאן בדף, ותוכלו לתאם פגישה אישית במשרדים שלנו - שם נכיר, נבין מה מתאים לך ונבנה יחד את הצעד הבא.</p>
-      <a href="#leadForm" class="btn-primary">היכנס/י עכשיו לחיים שתמיד רצית</a>
+      <p>לאחר שליחת הטופס תקבלו אישור כאן בדף, ותוכלו לתאם פגישה אישית במשרדים שלנו - שם נכיר, נבין מה מתאים לכם ונבנה יחד את הצעד הבא.</p>
+      <a href="#leadForm" class="btn-primary">היכנסו עכשיו לחיים שתמיד רציתם</a>
       <div class="schedule-line">
         <div class="item"><strong>שני ורביעי, 19:30</strong>ימי המפגשים האישיים</div>
         <div class="item"><strong>מגדלי בסר, פ"ת</strong>בניין T, קומה 18</div>
@@ -347,7 +347,10 @@
     </div>
   </section>
 
-  <footer>MATAR TOURS · סוכנת נסיעות V.I.P לחופשות מושלמות</footer>
+  <footer>
+    <span>MATAR TOURS · סוכנת נסיעות V.I.P לחופשות מושלמות</span>
+    <a href="https://wa.me/972555564323" class="footer-whatsapp" target="_blank" rel="noreferrer">💬 שאלות ועדכונים בוואטסאפ</a>
+  </footer>
 
   <script>
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxjAwZvA1jfmQToegMtQk2gIGExGRa6FCt7CaePfvByy7NpLJ9vtbZGL_oaRnZd6nGE8A/exec';
@@ -487,7 +490,7 @@
         time: data.get('time') || '',
         interest: data.get('interest') || '',
         selectedDate: formatSelectedDateLabel(selectedSessionDate),
-        commit: commitCheckbox.checked ? 'התחייב/ה להגיע' : '',
+        commit: commitCheckbox.checked ? 'התחייבו להגיע' : '',
         source: 'landing-tourism',
         timestamp: new Date().toISOString()
       };
@@ -495,13 +498,13 @@
       try {
         await sendToGoogleSheets(lead);
         form.style.display = 'none';
-        document.getElementById('thankYouDate').textContent = 'נרשמת לפגישה ביום ' + lead.selectedDate;
+        document.getElementById('thankYouDate').textContent = 'נרשמתם לפגישה ביום ' + lead.selectedDate;
         document.getElementById('addToCalendarBtn').href = buildCalendarLink(selectedSessionDate);
-        document.getElementById('whatsappCancelLink').href = `https://wa.me/972555564323?text=${encodeURIComponent('היי, נרשמתי לפגישה ב-' + lead.selectedDate + ' (' + lead.name + ') ואני צריך/ה לעדכן.')}`;
+        document.getElementById('whatsappCancelLink').href = `https://wa.me/972555564323?text=${encodeURIComponent('היי, נרשמתי לפגישה ב-' + lead.selectedDate + ' (' + lead.name + ') ויש לי עדכון לגבי ההגעה.')}`;
         thankYou.classList.add('active');
       } catch (error) {
         console.error(error);
-        showError('שגיאה בשליחת הטופס. בדוק/י את כתובת ה־Google Apps Script והסיסמאות. נסה שנית.');
+        showError('שגיאה בשליחת הטופס. בדקו את כתובת ה־Google Apps Script והסיסמאות. נסו שנית.');
       }
     });
   </script>
