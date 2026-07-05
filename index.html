@@ -26,6 +26,8 @@
       --surface: #fafafb;
       --green: #25D366;
       --green-dark: #1f9d6b;
+      --gold: #f3c66b;
+      --gold-soft: #f7d78c;
       --error-text: #c8323a;
       --error-bg: #fdf0f1;
       --error-border: #f5c2c7;
@@ -61,16 +63,14 @@
     /* ---------- HERO ---------- */
     .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; background: #0a1620; }
     .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=80'); background-size: cover; background-position: center; animation: kenburns 24s ease-out infinite alternate; }
-    .hero-overlay-1 { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,52,78,0.24) 0%, rgba(8,52,78,0.02) 36%, rgba(6,58,86,0.46) 80%, rgba(6,58,86,0.64) 100%); }
-    .hero-overlay-2 { position: absolute; inset: 0; background: linear-gradient(to left, rgba(6,58,86,0.4) 0%, rgba(6,58,86,0) 60%); }
+    .hero-overlay-1 { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3,12,20,0.45) 0%, rgba(3,16,24,0.3) 30%, rgba(3,16,24,0.78) 72%, rgba(2,12,18,0.92) 100%); }
+    .hero-overlay-2 { position: absolute; inset: 0; background: linear-gradient(to left, rgba(2,12,18,0.6) 0%, rgba(2,12,18,0.05) 65%); }
     .hero-inner { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px,5vw,32px) clamp(56px,9vw,104px); }
-    .hero-content { max-width: 760px; }
-    .hero-eyebrow { opacity: 0; animation: riseLoad .8s cubic-bezier(0.22,0.61,0.36,1) .15s both; display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(8px); margin-bottom: 26px; }
-    .hero-eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-lighter); box-shadow: 0 0 12px var(--blue-light); }
-    .hero-eyebrow span.label { color: #fff; font-weight: 600; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; }
-    .hero h1 { opacity: 0; animation: riseLoad .9s cubic-bezier(0.22,0.61,0.36,1) .28s both; font-size: clamp(36px,5.8vw,72px); line-height: 1.06; color: #fff; margin: 0 0 22px; text-shadow: 0 2px 30px rgba(0,0,0,0.3); }
-    .hero h1 .accent { color: var(--blue-lighter); }
-    .hero p.lead { opacity: 0; animation: riseLoad .9s cubic-bezier(0.22,0.61,0.36,1) .42s both; font-size: clamp(16px,1.9vw,20px); line-height: 1.7; color: rgba(255,255,255,0.9); max-width: 620px; margin: 0 0 34px; font-weight: 400; }
+    .hero-content { max-width: 1040px; }
+    .hero h1 { opacity: 0; animation: riseLoad .9s cubic-bezier(0.22,0.61,0.36,1) .28s both; font-size: clamp(30px,4.6vw,54px); line-height: 1.22; color: #fff; margin: 0 0 20px; text-shadow: 0 6px 28px rgba(0,0,0,0.6), 0 2px 10px rgba(0,0,0,0.5); }
+    .hero h1 .accent { color: var(--gold); }
+    .hero p.lead-punch { opacity: 0; animation: riseLoad .9s cubic-bezier(0.22,0.61,0.36,1) .36s both; font-size: clamp(18px,2.2vw,24px); line-height: 1.5; font-weight: 700; color: #fff; text-shadow: 0 4px 18px rgba(0,0,0,0.6); max-width: 620px; margin: 0 0 20px; }
+    .hero p.lead { opacity: 0; animation: riseLoad .9s cubic-bezier(0.22,0.61,0.36,1) .42s both; font-size: clamp(15px,1.7vw,18px); line-height: 1.7; color: rgba(255,255,255,0.88); text-shadow: 0 2px 12px rgba(0,0,0,0.5); max-width: 620px; margin: 0 0 34px; font-weight: 400; }
     .hero-ctas { opacity: 0; animation: riseLoad .9s cubic-bezier(0.22,0.61,0.36,1) .56s both; display: flex; flex-wrap: wrap; gap: 14px; }
     .scroll-hint { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); opacity: 0; animation: fadeLoad 1s ease .9s both; display: flex; flex-direction: column; align-items: center; gap: 7px; color: rgba(255,255,255,0.6); }
     .scroll-hint span.txt { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
@@ -96,13 +96,18 @@
     .section p.lead-text { font-size: clamp(16px,1.8vw,19px); line-height: 1.7; color: var(--text-muted); max-width: 600px; }
     .accent-blue { color: var(--blue); }
 
-    /* ---------- TRUST STRIP ---------- */
-    .trust { background: #fff; padding: clamp(30px,4vw,46px) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(16px,3vw,40px); }
-    .trust-item { display: flex; align-items: center; gap: 12px; justify-content: center; }
-    .trust-item span { color: var(--text-soft); font-size: clamp(13px,1.5vw,15px); font-weight: 500; line-height: 1.35; }
-    @media (max-width: 780px) { .trust-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 420px) { .trust-grid { grid-template-columns: 1fr; } }
+    /* ---------- PAIN / SOLUTION ---------- */
+    .problem-split { background: var(--cream); overflow: hidden; }
+    .problem-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; align-items: stretch; min-height: clamp(420px,44vw,560px); }
+    .problem-image { position: relative; overflow: hidden; min-height: 320px; background-image: url('./assets/bored-office-clock.jpg'); background-size: cover; background-position: center 15%; }
+    .problem-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to left, rgba(251,249,246,0) 55%, var(--cream) 100%); }
+    .problem-text { display: flex; flex-direction: column; justify-content: center; padding: clamp(44px,6vw,80px) clamp(28px,5vw,72px); }
+    .pain-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 28px; }
+    .pain-chip { display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--text-muted); font-size: 14.5px; font-weight: 500; }
+    .pain-chip svg { flex-shrink: 0; }
+    .solution-callout { display: block; padding: clamp(22px,2.6vw,28px) clamp(24px,3vw,34px); border-radius: 20px; background: linear-gradient(135deg, var(--blue), var(--blue-light)); color: #fff; font-size: clamp(16px,1.7vw,19px); line-height: 1.6; font-weight: 600; box-shadow: 0 26px 50px -22px rgba(0,105,148,0.55); }
+    .solution-callout strong { font-weight: 800; }
+    @media (max-width: 860px) { .problem-grid { grid-template-columns: 1fr; } .problem-image { min-height: 260px; } .problem-image::after { background: linear-gradient(0deg, var(--cream), rgba(251,249,246,0) 45%); } }
 
     /* ---------- WHO SECTION ---------- */
     .section { padding: clamp(72px,10vw,124px) 0; background: #fff; }
@@ -111,8 +116,14 @@
     .card-who { padding: 34px 30px; border: 1px solid var(--line); border-radius: 18px; background: #fff; transition: transform .3s cubic-bezier(0.22,0.61,0.36,1), box-shadow .3s; }
     .card-who:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -20px rgba(12,12,14,0.18); }
     .card-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--blue-bg); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
-    .card-who h3, .card-program h3 { font-weight: 700; font-size: 20px; color: var(--text); margin: 0 0 10px; }
-    .card-who p, .card-program p { font-size: 15.5px; line-height: 1.65; color: var(--text-muted); margin: 0; }
+    .card-who h3, .card-program h3, .card-criteria h3 { font-weight: 700; font-size: 20px; color: var(--text); margin: 0 0 10px; }
+    .card-who p, .card-program p, .card-criteria p { font-size: 15.5px; line-height: 1.65; color: var(--text-muted); margin: 0; }
+
+    .card-criteria { position: relative; padding: 36px 28px 32px; border-radius: 22px; background: linear-gradient(180deg, #fff, var(--blue-bg) 220%); border: 1px solid var(--line); box-shadow: 0 10px 26px -18px rgba(12,12,14,0.15); overflow: hidden; transition: transform .3s cubic-bezier(0.22,0.61,0.36,1), box-shadow .3s, border-color .3s; }
+    .card-criteria:hover { transform: translateY(-8px); box-shadow: 0 32px 60px -22px rgba(0,105,148,0.4); border-color: var(--blue-light); }
+    .card-criteria .criteria-num { position: absolute; top: 10px; left: 20px; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 52px; line-height: 1; color: var(--blue-select); z-index: 0; }
+    .card-criteria .card-icon-circle { position: relative; z-index: 1; }
+    .card-criteria h3, .card-criteria p { position: relative; z-index: 1; }
 
     /* ---------- FREEDOM SPLIT ---------- */
     .split { background: #fff; position: relative; overflow: hidden; }
@@ -249,12 +260,9 @@
     <div class="hero-overlay-2"></div>
     <div class="hero-inner">
       <div class="hero-content">
-        <div class="hero-eyebrow">
-          <span class="dot"></span>
-          <span class="label">Matar Tours · עולם של חופש</span>
-        </div>
-        <h1>הגיע הרגע לחיות <span class="accent">חיים של יוקרה וחופש</span><br>בעולם התיירות — מהבית שלכם</h1>
-        <p class="lead">אם גם אתם מרגישים שהחיים עוברים בין עבודה שלא ממלאת אתכם לשגרה שלא משאירה מקום לחלומות — הגיע הזמן לעצור. תוכנית הכשרה מלאה לאנשים בגילאי 25–50 שאוהבים תיירות ורוצים להפוך את זה למקור פרנסה אמיתי: בלי ניסיון קודם, עם ליווי אישי צמוד, קהילה שתומכת בכם בכל צעד — עד שהחלום הזה הופך למציאות שלכם.</p>
+        <h1>חולמים על חיים אחרים?<br>זה המקום <span class="accent">להגשים את החלומות שלכם!</span></h1>
+        <p class="lead-punch">עם חופש מוחלט לעבוד מכל מקום, בלי בוס על הראש — רק אתם והחלומות שלכם.</p>
+        <p class="lead">אצלנו תקבלו מכונה משומנת שמלמדת אתכם איך להיכנס לעולם המופלא של התיירות, איך להפוך את התחביב שלכם למקור הכנסה אמיתי, ואיך יחד נגשים לכם את כל החלומות. ליווי אישי צמוד, בניית תוכנית עבודה מסודרת, הכשרה מקיפה בכל התחומים, וקהילה מפרגנת ותומכת כמו שלא תמצאו בשום מקום אחר.</p>
         <div class="hero-ctas">
           <a href="#leadForm" class="pill-btn blue">
             אני רוצה להתחיל את המסע שלי
@@ -270,33 +278,28 @@
     </div>
   </section>
 
-  <section class="section section-cream">
-    <div class="wrap">
-      <div class="section-head-center" style="max-width:760px;">
+  <section class="problem-split">
+    <div class="problem-grid">
+      <div class="problem-image"></div>
+      <div class="problem-text">
         <span class="eyebrow">למה עכשיו</span>
         <h2>נמאס לכם לחיות לפי הלוח זמנים <span class="accent-blue">של מישהו אחר?</span></h2>
-        <p class="lead-text" style="margin:0 auto;">קמים בבוקר לעבודה שלא בחרתם, מבקשים אישור על כל יום חופש, ומרגישים שהפוטנציאל האמיתי שלכם נשאר בצד — בזמן שהחיים ממשיכים בלעדיכם. מה היה קורה אם היה לכם עסק משלכם, בתחום שאתם אוהבים, עם חופש אמיתי לתכנן את הזמן והחיים שלכם? <strong style="color:#0c0c0e;">זו ההזדמנות שחיכיתם לה.</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="trust">
-    <div class="wrap trust-grid">
-      <div class="trust-item">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#006994" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-        <span>ללא ניסיון תיירותי נדרש</span>
-      </div>
-      <div class="trust-item">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#006994" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-        <span>ליווי אישי לאורך כל הדרך</span>
-      </div>
-      <div class="trust-item">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#006994" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg>
-        <span>זום + מפגשים פרונטליים</span>
-      </div>
-      <div class="trust-item">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#006994" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <span>קהילה תומכת</span>
+        <p class="lead-text" style="margin:16px 0 28px;">אם אתם קמים כל בוקר לעבודה שלא בחרתם, מבקשים אישור על כל יום חופש, ומרגישים שהפוטנציאל האמיתי שלכם נשאר בצד בזמן שהחיים ממשיכים בלעדיכם — הגיע הזמן לשינוי.</p>
+        <div class="pain-row">
+          <span class="pain-chip">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#84848d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            עבודה שלא בחרתם
+          </span>
+          <span class="pain-chip">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#84848d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/><path d="m9.5 15 2 2 3.5-3.5"/></svg>
+            אישור על כל יום חופש
+          </span>
+          <span class="pain-chip">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#84848d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-4 4"/></svg>
+            פוטנציאל שנשאר בצד
+          </span>
+        </div>
+        <span class="solution-callout">אתם מבינים.. זה לא חייב להיות ככה. <strong>אצלנו תבנו עסק משלכם</strong> — בתחום שאתם אוהבים, עם חופש אמיתי לתכנן את הזמן והחיים שלכם. זו ההזדמנות שחיכיתם לה.</span>
       </div>
     </div>
   </section>
@@ -304,38 +307,42 @@
   <section class="section" id="who" style="scroll-margin-top:90px;">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">למי זה מתאים</span>
+        <span class="eyebrow" style="font-size:18px;">למי זה מתאים?</span>
         <h2>נשים וגברים שיודעים שמגיע להם<br>יותר מסתם <span class="accent-blue">"עוד עבודה"</span></h2>
-        <p class="lead-text">אם אתם בגילאי 25–50, מאמינים שמגיע לכם לחיות חיים מלאים בחופש, עצמאות והגשמה, אוהבים תיירות, ומחפשים מקור הכנסה נוסף אמיתי — זה בדיוק המקום בשבילכם.</p>
+        <p class="lead-text">אם אתם מאמינים שמגיע לכם לחיות חיים מלאים בחופש, עצמאות והגשמה, אוהבים תיירות, ומחפשים מקור הכנסה נוסף אמיתי — הנה תנאי הסף להצטרפות לתכנית.</p>
       </div>
       <div class="cards-4">
-        <div class="card-who">
-          <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#006994" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 4.5 5.2c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+        <div class="card-criteria">
+          <span class="criteria-num">01</span>
+          <div class="card-icon-circle">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <h3>אין צורך בניסיון</h3>
-          <p>מלמדים אתכם הכל מאפס, שלב אחרי שלב, גם אם עולם התיירות הוא תחום חדש לגמרי בשבילכם.</p>
+          <h3>לפחות 3 שעות פנויות ביום</h3>
+          <p>זמן קבוע שתקדישו לבניית העסק שלכם — גם אם זה לצד עבודה קיימת.</p>
         </div>
-        <div class="card-who">
-          <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#006994" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        <div class="card-criteria">
+          <span class="criteria-num">02</span>
+          <div class="card-icon-circle">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
           </div>
-          <h3>ליווי אישי צמוד</h3>
-          <p>הדרכות פרונטליות וזומים, תמיכה ושיחות אישיות לאורך כל הדרך — עד להצלחה.</p>
+          <h3>טלפון חכם ו/או מחשב</h3>
+          <p>מחשב נייד או סמארטפון עם חיבור לאינטרנט — זה כל הציוד שצריך.</p>
         </div>
-        <div class="card-who">
-          <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#006994" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        <div class="card-criteria">
+          <span class="criteria-num">03</span>
+          <div class="card-icon-circle">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
-          <h3>הכשרה מלאה</h3>
-          <p>פיתוח עסק, שיווק, מכירות, מיינדסט ובניית מותג אישי מצליח — הכל במקום אחד.</p>
+          <h3>יכולת למידה</h3>
+          <p>פתיחות ללמוד תחום חדש ולהתפתח בו — הידע עצמו כבר נמצא אצלנו.</p>
         </div>
-        <div class="card-who">
-          <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#006994" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <div class="card-criteria">
+          <span class="criteria-num">04</span>
+          <div class="card-icon-circle">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
           </div>
-          <h3>עצמאות אמיתית</h3>
-          <p>מודל עסקי גמיש שמתנהל מהבית שלכם, עם פוטנציאל הכנסה משמעותי שתלוי רק בכם.</p>
+          <h3>רעב אמיתי להצלחה</h3>
+          <p>המוטיבציה והנחישות להצליח — זה מה שבאמת מבדיל בסוף הדרך.</p>
         </div>
       </div>
     </div>
