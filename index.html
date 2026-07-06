@@ -92,6 +92,10 @@
 
     /* ---------- SECTION HEAD ---------- */
     .eyebrow { display: block; font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); }
+    .success-band { position: relative; overflow: hidden; padding: clamp(90px,14vw,150px) 0; background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1800&q=80'); background-size: cover; background-position: center; }
+    .success-band::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,35,50,0.35), rgba(0,35,50,0.6)); }
+    .success-band .wrap { position: relative; z-index: 1; }
+    .success-band h2 { color: #fff; text-shadow: 0 2px 18px rgba(0,0,0,0.35); font-size: clamp(36px,5.6vw,64px); }
     .section h2 { font-size: clamp(28px,4.2vw,48px); line-height: 1.12; color: var(--text); margin: 16px 0 18px; }
     .section p.lead-text { font-size: clamp(16px,1.8vw,19px); line-height: 1.7; color: var(--text-muted); max-width: 600px; }
     .accent-blue { color: var(--blue); }
@@ -362,9 +366,9 @@
   <section class="section section-cream" id="program" style="scroll-margin-top:90px;">
     <div class="wrap">
       <div class="section-head-center">
-        <span class="eyebrow">מה תקבלו בתכנית</span>
-        <h2>הכל כדי שתתחילו בביטחון מלא — ולא תעצרו</h2>
-        <p class="lead-text" style="margin:0 auto;">תכנית מובנית שמלווה אתכם מהצעד הראשון ועד ללקוחות ולעסק פעיל.</p>
+        <span class="eyebrow" style="font-size:20px; letter-spacing:normal;">אצלינו תקבלו:</span>
+        <h2>מכונה משומנת שתלמד אתכם כל מה שאתם צריכים כדי להצליח</h2>
+        <p class="lead-text" style="margin:0 auto;">יש לנו תוכנית מובנית שמלווה אתכם מהצעד הראשון ועד ללקוחות ולעסק פעיל.</p>
       </div>
       <div class="cards-4">
         <div class="card-program">
@@ -395,6 +399,14 @@
           <h3>חברה ותמיכה אמיתית</h3>
           <p>קהילה תומכת, מפגשים, זומים וקבוצת ליווי שלא תשאיר אתכם לבד אף פעם.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="success-band">
+    <div class="wrap">
+      <div class="section-head-center" style="margin-bottom:0;">
+        <h2>בואו להיות חלק מההצלחה שלנו</h2>
       </div>
     </div>
   </section>
