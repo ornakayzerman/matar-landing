@@ -7,6 +7,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '512132541113008');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=512132541113008&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <style>
     :root {
       --blue: #006994;
@@ -145,6 +162,7 @@
     /* ---------- LEAD FORM ---------- */
     .lead-section { padding: clamp(64px,9vw,110px) 0; background: linear-gradient(180deg, var(--cream), #fff); scroll-margin-top: 90px; }
     .lead-wrap { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 clamp(20px,5vw,32px); }
+    .lead-headline-eyebrow { display: block; text-align: center; font-weight: 800; font-size: clamp(18px,2.4vw,26px); letter-spacing: 0.02em; color: var(--blue); margin: 0 0 22px; }
     .lead-card { display: grid; grid-template-columns: 0.92fr 1.08fr; background: #fff; border: 1px solid var(--line); border-radius: 26px; overflow: hidden; box-shadow: 0 40px 90px -40px rgba(12,12,14,0.28); }
     .lead-left { position: relative; padding: clamp(40px,4vw,56px); color: #fff; overflow: hidden; }
     .lead-left-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; }
@@ -368,12 +386,12 @@
 
   <section class="lead-section" id="leadForm">
     <div class="lead-wrap">
+      <span class="lead-headline-eyebrow">פגישה אישית · ללא התחייבות</span>
       <div class="lead-card">
         <div class="lead-left">
           <div class="lead-left-bg"></div>
           <div class="lead-left-overlay"></div>
           <div class="lead-left-inner">
-            <span class="eyebrow">פגישה אישית · ללא התחייבות</span>
             <h2>הצעד הראשון<br>לחיים החדשים שלכם</h2>
             <p>נפגש במשרדי החברה, שם תשמעו סקירה רחבה יותר, נראה לכם את הפרקטיקה, נבדוק התאמה ולאחר מכן נוכל לצאת לדרך לעבר החיים שתמיד רציתם.</p>
             <div class="lead-info">
@@ -657,6 +675,7 @@
         document.getElementById('addToCalendarBtn').href = buildCalendarLink(selectedSessionDate);
         document.getElementById('whatsappCancelLink').href = `https://wa.me/972555564323?text=${encodeURIComponent('היי, נרשמתי לפגישה ב-' + lead.selectedDate + ' (' + lead.name + ') ויש לי עדכון לגבי ההגעה.')}`;
         thankYou.classList.add('active');
+        if (typeof fbq === 'function') { fbq('track', 'Lead'); }
       } catch (error) {
         console.error(error);
         showError('שגיאה בשליחת הטופס. בדקו את כתובת ה־Google Apps Script והסיסמאות. נסו שנית.');
