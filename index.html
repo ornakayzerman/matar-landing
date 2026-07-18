@@ -536,6 +536,8 @@
 
     function pad2(n) { return String(n).padStart(2, '0'); }
 
+    const EXCLUDED_SESSION_DATES = ['2026-07-22']; // ערב תשעה באב - אין מפגש
+
     function getUpcomingSessions(count) {
       const sessions = [];
       const cursor = new Date();
@@ -543,7 +545,8 @@
       cursor.setDate(cursor.getDate() + 1);
       while (sessions.length < count) {
         const day = cursor.getDay();
-        if (day === 1 || day === 3) { // Monday or Wednesday
+        const isoDate = `${cursor.getFullYear()}-${pad2(cursor.getMonth() + 1)}-${pad2(cursor.getDate())}`;
+        if ((day === 1 || day === 3) && !EXCLUDED_SESSION_DATES.includes(isoDate)) { // Monday or Wednesday
           sessions.push(new Date(cursor));
         }
         cursor.setDate(cursor.getDate() + 1);
