@@ -430,8 +430,8 @@
               </div>
             </div>
             <div class="form-field">
-              <label for="email">אימייל <span class="opt">(אופציונלי)</span></label>
-              <input type="email" id="email" name="email" placeholder="name@email.com">
+              <label for="email">אימייל <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="name@email.com" required>
             </div>
             <div class="form-row">
               <div class="form-field">
@@ -645,8 +645,12 @@
       event.preventDefault();
       hideError();
 
-      if (!form.name.value.trim() || !form.phone.value.trim()) {
-        showError('נא למלא שם וטלפון.');
+      if (!form.name.value.trim() || !form.phone.value.trim() || !form.email.value.trim()) {
+        showError('נא למלא שם, טלפון ואימייל.');
+        return;
+      }
+      if (!form.email.checkValidity()) {
+        showError('נא להזין כתובת אימייל תקינה.');
         return;
       }
       if (!selectedSessionDate) {
